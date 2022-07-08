@@ -1,4 +1,4 @@
-package br.com.alura.rh.service;
+package br.com.alura.rh.service.reajuste;
 
 import br.com.alura.rh.model.Funcionario;
 
@@ -7,7 +7,7 @@ import java.util.List;
 
 public class ReajusteService {
 
-    private List<ValidacaoReajuste> validacoes;
+    private final List<ValidacaoReajuste> validacoes;
 
     public ReajusteService(List<ValidacaoReajuste> validacoes) {
         this.validacoes = validacoes;

@@ -1,4 +1,4 @@
-package br.com.alura.rh.service;
+package br.com.alura.rh.service.promocao;
 
 import br.com.alura.rh.ValidacaoException;
 import br.com.alura.rh.model.Cargo;
@@ -8,11 +8,11 @@ public class PromocaoService {
 
     public void promover(Funcionario funcionario, boolean metaBatida) {
 
-        if (funcionario.getDadosPessoais().getCargo() == Cargo.GERENTE) {
+        Cargo cargoAtual = funcionario.getDadosPessoais().getCargo();
+
+        if (Cargo.GERENTE == cargoAtual) {
             throw new ValidacaoException("Gerentes não podem ser promovidos!");
         }
-
-        Cargo cargoAtual = funcionario.getDadosPessoais().getCargo();
 
         if (metaBatida) {
             Cargo novoCargo = cargoAtual.getProximoCargo();
